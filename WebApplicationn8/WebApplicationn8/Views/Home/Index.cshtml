@@ -1,0 +1,57 @@
+﻿@model List<WebApplicationn8.Models.Product>
+
+<h1>Product list:</h1>
+
+<ul>
+    @foreach (var product in Model)
+    {
+        <li class="product-item">@product.ID. @product.Name - @product.Price$ (@product.CreatedDate)</li>
+    }
+</ul>
+
+<h1>Product table:</h1>
+
+<div style="overflow-x:auto;">
+    <table class="styled-table">
+        <thead>
+            <tr style="background-color: darkred; color: white;">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Created Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr style="background-color: crimson; color: white;">
+                    <td>@product.ID</td>
+                    <td>@product.Name</td>
+                    <td>@product.Price</td>
+                    <td>@product.CreatedDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .styled-table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .product-item {
+        background-color: #ffe6e6;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+        list-style-type: none;
+    }
+        .styled-table th,
+        .styled-table td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+</style>
